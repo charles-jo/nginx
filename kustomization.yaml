@@ -4,10 +4,8 @@ kind: Kustomization
 namespace: default
 
 helmCharts:
-  - name: ingress-nginx
-    repo: https://kubernetes.github.io/ingress-nginx
-    version: 4.10.1         # Check for the latest version!
+  - name: nginx
+    repo: https://nginxinc.github.io/helm-charts
+    version: 0.18.0
     releaseName: my-nginx
-    valuesInline:
-      controller:
-        replicaCount: 1
+    valuesFile: values.yaml    
