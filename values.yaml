@@ -1,7 +1,6 @@
-service:
-  type: ClusterIP
-  port: 80
-replicaCount: 1
-image:
-  repository: nginx
-  tag: latest
+# values.yaml
+# This file contains the overrides for the ingress-nginx Helm chart.
+controller:
+  service:
+    # Change the default service type from LoadBalancer to NodePort
+    type: NodePort

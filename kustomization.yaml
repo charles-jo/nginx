@@ -1,11 +1,14 @@
+# kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: default
-
+# Use the official Kubernetes NGINX Ingress chart
 helmCharts:
-  - name: nginx
-    repo: https://nginxinc.github.io/helm-charts
-    version: 0.18.0
-    releaseName: my-nginx
-    valuesFile: values.yaml    
+- name: ingress-nginx
+  # The repository for the community-maintained chart
+  repo: https://kubernetes.github.io/ingress-nginx
+  # You can pin to a specific version
+  version: 4.10.1
+  releaseName: my-nginx-ingress
+  namespace: ingress-nginx
+  valuesFile: values.yaml
