@@ -4,11 +4,11 @@ kind: Kustomization
 
 # Use the official Kubernetes NGINX Ingress chart
 helmCharts:
-- name: ingress-nginx-test
+- name: ingress-nginx
   # The repository for the community-maintained chart
   repo: https://kubernetes.github.io/ingress-nginx
   # You can pin to a specific version
   version: 4.10.1
   releaseName: my-nginx-ingress
-  namespace: ingress-nginx
+  namespace: ingress-nginx-test
   valuesFile: values.yaml
