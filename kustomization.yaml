@@ -6,10 +6,12 @@ namespace: default
 helmCharts:
   - name: nginx
     repo: https://charts.bitnami.com/bitnami
-    version: 15.3.4  # Make sure this chart version exists
+    version: 15.3.4
     releaseName: my-nginx
     valuesInline:
       service:
         type: ClusterIP
       image:
-        tag: 1.25.2-debian-11-r56  # <-- Use a valid tag from Docker Hub
+        registry: docker.io
+        repository: nginx        # <-- NOTE: official nginx image
+        tag: latest
